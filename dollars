@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Ahmed ❤️ Asmaa</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff6a88,#ff99ac);
+font-family:Arial;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.card{
+background:rgba(0,0,0,0.35);
+padding:40px;
+border-radius:20px;
+max-width:600px;
+backdrop-filter:blur(10px);
+}
+
+h1{
+font-size:45px;
+}
+
+button{
+margin:10px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+.yes{
+background:white;
+color:#ff4d6d;
+}
+
+.no{
+background:#333;
+color:white;
+}
+
+.hidden{
+display:none;
+margin-top:20px;
+font-size:22px;
+line-height:1.6;
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-100vh);opacity:0}
+}
+
+.bigHeart{
+font-size:80px;
+margin-top:20px;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Ahmed ❤️ Asmaa</h1>
+
+<p>Do you love Ahmed? ❤️</p>
+
+<button class="yes" onclick="yesLove()">Yes</button>
+<button class="no" onmouseover="moveNo()">No</button>
+
+<div id="result" class="hidden">
+
+<p>
+اسمومتي ونور عيني وحياتي وسندي في الدنيا  
+اكتر شخص في حياتي انا بحبه  
+واكتر شخص في دنيتي انا بتمني اكمل معاه عمري  
+
+انتي ست الكل وست البنات ونور عيني  
+وامي واختي وبنتي وصاحبتي وكل ما ليا  
+
+بقالنا حوالي 120 يوم مع بعض  
+وكل يوم بحبك عن الي قبله  
+
+ربنا يخليكي ليا يا نور عيني  
+ويحفظك ليا واشوفك اسعد الناس  
+
+بحبك ❤️
+</p>
+
+<div class="bigHeart">❤️</div>
+
+</div>
+
+</div>
+
+<script>
+
+function yesLove(){
+document.getElementById("result").style.display="block";
+}
+
+function moveNo(){
+let btn=document.querySelector(".no");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"vw";
+btn.style.top=Math.random()*80+"vh";
+}
+
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
